@@ -50,8 +50,63 @@ export default function Home() {
 
 
           {/* RESTAURANT PHOTOS */}
-          <div></div>
+          <div>
+            <h1 className='font-bold text-3xl mt-10 mb-7 border-b pb-5'>
+              5 photos
+            </h1>
+
+            <div className='flex flex-wrap'>
+              <img className='w-56 h-44 mr-1 mb-1' src="https://resizer.otstatic.com/v2/photos/xlarge/2/51907532.webp" alt="" />
+
+              <img className='w-56 h-44 mr-1 mb-1' src="https://resizer.otstatic.com/v2/photos/xlarge/2/51907534.webp" alt="" />
+
+              <img className='w-56 h-44 mr-1 mb-1' src="https://resizer.otstatic.com/v2/photos/xlarge/1/51907535.webp" alt="" />
+
+              <img className='w-56 h-44 mr-1 mb-1' src="https://resizer.otstatic.com/v2/photos/xlarge/1/51907538.webp" alt="" />
+
+              <img className='w-56 h-44 mr-1 mb-1' src="https://resizer.otstatic.com/v2/photos/xlarge/1/51907536.webp" alt="" />
+            </div>
+          </div>
           {/* RESTAURANT PHOTOS */}
+
+
+          {/* RESTAURANT REVIEWS */}
+          <div>
+            <h1 className='font-bold text-3xl mt-10 mb-7 border-b pb-5'>
+              What 100 people are saying
+            </h1>
+
+            <div>
+              {/* REVIEW CARD */}
+              <div className="border-b pb-7 mb-7">
+                <div className="flex">
+                  <div className='w-1/6 flex flex-col items-center'>
+                    <div className="rounded-full bg-blue-400 w-16 h-16 flex items-center justify-center">
+                      <h2 className="text-white text-2xl">MJ</h2>
+                    </div>
+
+                    <p className='text-center'>Michael Jordan</p>
+                  </div>
+
+                  <div className='ml-10 w-5/6'>
+                    <div className="flex items-center">
+                      <div className="flex mr-5">
+                        *****
+                      </div>
+                    </div>
+
+                    <div className='mt-5'>
+                      <p className='text-lg font-light'>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi labore, error incidunt quisquam ex voluptas omnis ipsa corrupti totam reiciendis sunt molestias temporibus, ipsam sapiente fugiat fugit repellat repudiandae provident.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* REVIEW CARD */}
+            </div>
+          </div>
+          {/* RESTAURANT REVIEWS */}
         </div>
       </div>
       {/* RESTAURANT DETAILS */}
