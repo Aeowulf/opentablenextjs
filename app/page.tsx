@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import HomeHeader from '@/components/HomeHeader'
-import Card from '@/components/Card'
+import RestaurantCard from '@/components/RestaurantCard'
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
 
       {/* CARD AREA */}
       <div className='py-3 px-36 mt-10 flex flex-wrap'>
-        <Card />
+        <RestaurantCard />
       </div>
       {/* CARD AREA */}
     </main>

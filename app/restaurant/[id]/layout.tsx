@@ -14,26 +14,10 @@ export default function RestaurantLayout({
   return (
     <>
       <RestaurantHeader />
-      
-      {/* RESTAURANT DETAILS */}
+
       <div className='flex m-auto w-2/3 justify-between items-start 0 -mt-11'>
-        <div className='bg-white w-[70%] rounded p-3 shadow'>
-          {/* RESTAURANT NAVBAR */}
-          <nav className='flex text-reg border-b pb-2'>
-            <a href="/restaurant/1" className='mr-7'>Overview</a>
-
-            <a href="/restaurant/1/menu" className='mr-7'>Menu</a>
-          </nav>
-          {/* RESTAURANT NAVBAR */}
-
-          {children}
-        </div>
-
-        {/* RESERVATION CARD */}
-        <ReservationCard />
-        {/* RESERVATION CARD */}
+        {children}
       </div>
-      {/* RESTAURANT DETAILS */}
     </>
   )
 }
