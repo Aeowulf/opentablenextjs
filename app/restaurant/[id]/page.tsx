@@ -1,20 +1,17 @@
-import Image from 'next/image'
-import RestaurantHeader from '@/components/RestaurantHeader'
-
 export default function Home() {
   return (
     <>
-      <RestaurantHeader />
+      {/* <RestaurantHeader /> */}
 
       {/* RESTAURANT DETAILS */}
-      <div className='flex m-auto w-2/3 justify-between items-start 0 -mt-11'>
-        <div className='bg-white w-[70%] rounded p-3 shadow'>
+      {/* <div className='flex m-auto w-2/3 justify-between items-start 0 -mt-11'>
+        <div className='bg-white w-[70%] rounded p-3 shadow'> */}
           {/* RESTAURANT NAVBAR */}
-          <nav className='flex text-reg border-b pb-2'>
+          {/* <nav className='flex text-reg border-b pb-2'>
             <a href="" className='mr-7'>Overview</a>
 
             <a href="" className='mr-7'>Menu</a>
-          </nav>
+          </nav> */}
           {/* RESTAURANT NAVBAR */}
 
 
@@ -107,10 +104,10 @@ export default function Home() {
             </div>
           </div>
           {/* RESTAURANT REVIEWS */}
-        </div>
+        {/* </div> */}
 
         {/* RESERVATION CARD */}
-        <div className='w-[27%] relative text-reg'>
+        {/* <div className='w-[27%] relative text-reg'>
           <div className='fixed w-[15%] bg-white rounded p-3 shadow'>
             <div className="text-center border-b pb-2 font-bold">
               <h4 className="mr-7 text-lg">
@@ -154,9 +151,9 @@ export default function Home() {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
         {/* RESERVATION CARD */}
-      </div>
+      {/* </div> */}
       {/* RESTAURANT DETAILS */}
     </>
   )
