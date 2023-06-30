@@ -1,4 +1,4 @@
-export default function Home() {
+export default function Reserve() {
   return (
     <>
       <div className='border-t'> {/* h-screen */}

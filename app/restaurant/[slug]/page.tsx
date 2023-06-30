@@ -4,7 +4,7 @@ import RestaurantRating from "@/components/RestaurantRating";
 import RestaurantPhotos from "@/components/RestaurantPhotos";
 import ReviewCard from "@/components/ReviewCard";
 
-export default function Home() {
+export default function Restaurant() {
   return (
     <>
       {/* <RestaurantHeader /> */}

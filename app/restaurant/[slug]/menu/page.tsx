@@ -1,7 +1,7 @@
 import RestaurantNav from "@/components/RestaurantNav"
 import MenuCard from "@/components/MenuCard"
 
-export default function Home() {
+export default function Menu() {
   return (
     <div className='bg-white w-[100%] rounded p-3 shadow'>
       <RestaurantNav />
