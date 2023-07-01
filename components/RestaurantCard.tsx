@@ -1,6 +1,8 @@
+import Link from "next/link"
+
 const Card = () => {
   return (
-    <a href="/restaurant/1">
+    <Link href="/restaurant/1">
       <div className='w-64 h-72 m-3 rounded overflow-hidden border cursor-pointer'>
         <img 
           src="https://resizer.otstatic.com/v2/photos/wide-medium/2/51907533.png" 
@@ -32,7 +34,7 @@ const Card = () => {
           </p>
         </div>
       </div>
-    </a>
+    </Link>
   )
 }
 
