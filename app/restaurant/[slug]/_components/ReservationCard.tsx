@@ -1,3 +1,5 @@
+import React from "react"
+
 const ReservationCard = () => { 
   return (
     <div className='w-[27%] relative text-reg'>
@@ -11,7 +13,7 @@ const ReservationCard = () => {
         <div className="my-3 flex flex-col">
           <label htmlFor="">Party Size</label>
 
-          <select name="" id="" className='py-3 border-b font-light'>
+          <select title='.' name="" id="" className='py-3 border-b font-light'>
             <option value="">1 person</option>
 
             <option value="">2 people</option>
@@ -24,7 +26,7 @@ const ReservationCard = () => {
               Date
             </label>
 
-            <input type="text" className='py-3 border-b font-light w-28' />
+            <input title='.' type="text" className='py-3 border-b font-light w-28' />
           </div>
 
           <div className='flex flex-col w-[48%]'>
@@ -32,7 +34,7 @@ const ReservationCard = () => {
               Time
             </label>
 
-            <select name="" id="" className='py-3 border-b font-light'>
+            <select title='.' name="" id="" className='py-3 border-b font-light'>
               <option value="">7:30 AM</option>
 
               <option value="">9:30 AM</option>

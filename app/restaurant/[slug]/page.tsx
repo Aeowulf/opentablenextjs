@@ -1,8 +1,8 @@
-import ReservationCard from "@/components/ReservationCard";
-import RestaurantNav from "@/components/RestaurantNav";
-import RestaurantRating from "@/components/RestaurantRating";
-import RestaurantPhotos from "@/components/RestaurantPhotos";
-import ReviewCard from "@/components/ReviewCard";
+import ReservationCard from "@/app/restaurant/[slug]/_components/ReservationCard";
+import RestaurantNav from "@/app/restaurant/[slug]/_components/RestaurantNav";
+import RestaurantRating from "@/app/restaurant/[slug]/_components/RestaurantRating";
+import RestaurantPhotos from "@/app/restaurant/[slug]/_components/RestaurantPhotos";
+import ReviewCard from "@/app/restaurant/[slug]/_components/ReviewCard";
 
 export default function Restaurant() {
   return (

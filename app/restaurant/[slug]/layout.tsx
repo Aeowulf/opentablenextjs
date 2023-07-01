@@ -1,5 +1,5 @@
-import RestaurantHeader from '@/components/RestaurantHeader'
-import ReservationCard from '@/components/ReservationCard'
+import RestaurantHeader from '@/app/restaurant/[slug]/_components/RestaurantHeader'
+import ReservationCard from '@/app/restaurant/[slug]/_components/ReservationCard'
 
 export const metadata = {
   title: 'Milestones Grill | OpenTable',

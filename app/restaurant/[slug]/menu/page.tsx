@@ -1,5 +1,5 @@
-import RestaurantNav from "@/components/RestaurantNav"
-import MenuCard from "@/components/MenuCard"
+import RestaurantNav from "@/app/restaurant/[slug]/_components/RestaurantNav"
+import MenuCard from "@/app/restaurant/[slug]/menu/_components/MenuCard"
 
 export default function Menu() {
   return (

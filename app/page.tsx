@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import HomeHeader from '@/components/HomeHeader'
-import RestaurantCard from '@/components/RestaurantCard'
+import HomeHeader from '@/app/_components/HomeHeader'
+import RestaurantCard from '@/app/_components/RestaurantCard'
 
 export default function Home() {
 
