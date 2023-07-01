@@ -3,6 +3,7 @@ import HomeHeader from '@/components/HomeHeader'
 import RestaurantCard from '@/components/RestaurantCard'
 
 export default function Home() {
+
   return (
     <main>
       <HomeHeader />
