@@ -1,18 +1,29 @@
-import Image from 'next/image'
 import HomeHeader from '@/app/_components/HomeHeader'
 import RestaurantCard from '@/app/_components/RestaurantCard'
+import { PrismaClient } from '@prisma/client'
 
-export default function Home() {
+const prisma = new PrismaClient()
+
+const fetchRestaurants = async () => {
+  const restaurants = await prisma.restaurant.findMany()
+
+  return restaurants
+}
+
+export default async function Home() {
+  const restaurants = await fetchRestaurants()
+
+  console.log({ restaurants })
 
   return (
     <main>
       <HomeHeader />
 
-      {/* CARD AREA */}
       <div className='py-3 px-36 mt-10 flex flex-wrap'>
-        <RestaurantCard />
+        {restaurants.map(restaurant => (
+          <RestaurantCard />
+        ))}
       </div>
-      {/* CARD AREA */}
     </main>
   )
 }
