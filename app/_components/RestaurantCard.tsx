@@ -1,17 +1,23 @@
 import Link from "next/link"
+import { RestaurantCardType } from "../page"
+import Price from "./Price"
 
-const Card = () => {
+interface Props {
+  restaurant: RestaurantCardType
+}
+
+const RestaurantCard = ({ restaurant } : Props) => {
   return (
-    <Link href="/restaurant/1">
+    <Link href={`/restaurant/${restaurant.slug}`}>
       <div className='w-64 h-72 m-3 rounded overflow-hidden border cursor-pointer'>
         <img 
-          src="https://resizer.otstatic.com/v2/photos/wide-medium/2/51907533.png" 
+          src={restaurant.main_image} 
           alt="" 
           className='w-full h-36' 
         />
 
         <div className='p-1'>
-          <h3 className='font-bold text-2xl mb-2'>Milestones Grill</h3>
+          <h3 className='font-bold text-2xl mb-2'>{restaurant.name}</h3>
 
           <div className='flex items-start'>
             <div className='flex mb-2'>
@@ -22,11 +28,11 @@ const Card = () => {
           </div>
 
           <div className='flex text-reg font-light capitalize'>
-            <p className='mr-3'>Mexican</p>
+            <p className='mr-3'>{restaurant.cuisine.name}</p>
 
-            <p className='mr-3'>$$$$</p>
+            <Price price={restaurant.price} />
 
-            <p>Toronto</p>
+            <p>{restaurant.location.name}</p>
           </div>
 
           <p className='text-sm mt-1 font-bold'>
@@ -38,4 +44,4 @@ const Card = () => {
   )
 }
 
-export default Card
+export default RestaurantCard
