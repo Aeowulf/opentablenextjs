@@ -53,7 +53,7 @@ export default async function Restaurant({ params } : { params : { slug : string
 
         <RestaurantDescription description={restaurant.description} />
 
-        <RestaurantPhotos />
+        <RestaurantPhotos images={restaurant.images} />
 
         <RestaurantReviews />
       </div>
