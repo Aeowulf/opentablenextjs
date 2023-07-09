@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { RestaurantCardType } from "../page"
+import RestaurantSearchCard from "../search/_components/RestaurantSearchCard"
 import Price from "./Price"
 import Stars from "./Stars"
 
@@ -24,7 +25,8 @@ const RestaurantCard = ({ restaurant } : Props) => {
             <Stars reviews={restaurant.reviews} />
 
             <p className='ml-2'>
-              {restaurant.reviews.length} Review{restaurant.reviews.length === 1 ? '' : 's'}
+              {restaurant.reviews.length === 0 ? <>No Reviews</> : <>{restaurant.reviews.length} Review{restaurant.reviews.length === 1 ? '' : 's'}</>}
+              
             </p>
           </div>
 
