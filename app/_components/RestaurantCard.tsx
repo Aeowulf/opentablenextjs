@@ -24,7 +24,7 @@ const RestaurantCard = ({ restaurant } : Props) => {
               *****
             </div>
 
-            <p className='ml-2'>77 Reviews</p>
+            <p className='ml-2'>{restaurant.reviews.length} Reviews</p>
           </div>
 
           <div className='flex text-reg font-light capitalize'>
