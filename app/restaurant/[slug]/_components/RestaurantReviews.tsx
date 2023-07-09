@@ -1,14 +1,22 @@
+import { Review } from "@prisma/client"
 import ReviewCard from "./ReviewCard"
 
-const RestaurantReviews = () => {
+const RestaurantReviews = ({ reviews } : { reviews : Review[] }) => {
   return (
     <div>
       <h1 className='font-bold text-3xl mt-10 mb-7 border-b pb-5'>
-        What 100 people are saying
+        {reviews.length > 1 ? 
+          <>What {reviews.length} people are saying</> 
+        : reviews.length === 1 ?
+          <>What 1 person is saying</>
+        : <>No Reviews</>}
+        
       </h1>
 
       <div>
-        <ReviewCard />
+        {reviews.map((review) => (
+          <ReviewCard review={review} />
+        ))}
       </div>
     </div>
   )

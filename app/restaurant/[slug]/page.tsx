@@ -3,7 +3,7 @@ import RestaurantNav from "@/app/restaurant/[slug]/_components/RestaurantNav";
 import RestaurantRating from "@/app/restaurant/[slug]/_components/RestaurantRating";
 import RestaurantPhotos from "@/app/restaurant/[slug]/_components/RestaurantPhotos";
 import ReviewCard from "@/app/restaurant/[slug]/_components/ReviewCard";
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, Review } from "@prisma/client";
 import RestaurantTitle from "./_components/RestaurantTitle";
 import RestaurantDescription from "./_components/RestaurantDescription";
 import RestaurantReviews from "./_components/RestaurantReviews";
@@ -16,6 +16,7 @@ interface Restaurant {
   images: string[]
   description: string
   slug: string
+  reviews: Review[]
 }
 
 const fetchRestaurantBySlug = async (slug: string): Promise<Restaurant> => {
@@ -29,6 +30,7 @@ const fetchRestaurantBySlug = async (slug: string): Promise<Restaurant> => {
       images: true,
       description: true,
       slug: true,
+      reviews: true,
     }
   })
 
@@ -49,13 +51,13 @@ export default async function Restaurant({ params } : { params : { slug : string
 
         <RestaurantTitle name={restaurant.name} />
 
-        <RestaurantRating />
+        <RestaurantRating reviews={restaurant.reviews} />
 
         <RestaurantDescription description={restaurant.description} />
 
         <RestaurantPhotos images={restaurant.images} />
 
-        <RestaurantReviews />
+        <RestaurantReviews reviews={restaurant.reviews} />
       </div>
 
       <ReservationCard />
