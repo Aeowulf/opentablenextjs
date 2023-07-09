@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import { PRICE, PrismaClient } from "@prisma/client";
 import RestaurantCard from "../_components/RestaurantCard";
 import RestaurantSearchCard from "./_components/RestaurantSearchCard";
 import SearchHeaderInput from "./_components/SearchHeaderInput";
@@ -6,7 +6,39 @@ import SearchSideBar from "./_components/SearchSideBar";
 
 const prisma = new PrismaClient()
 
-const fetchRestaurantsByCity = (city : string | undefined) => {
+interface SearchParams { city? : string, cuisine? : string, price? : PRICE }
+
+const fetchRestaurantsByCity = (searchParams : SearchParams) => {
+  const where : any = {}
+
+  if (searchParams.city) {
+    const location = {
+      name: {
+        equals: searchParams.city.toLowerCase()
+      }
+    }
+
+    where.location = location
+  }
+
+  if (searchParams.cuisine) {
+    const cuisine = {
+      name: {
+        equals: searchParams.cuisine.toLowerCase()
+      }
+    }
+
+    where.cuisine = cuisine
+  }
+
+  if (searchParams.price) {
+    const price = {
+      equals: searchParams.price
+    }
+
+    where.price = price
+  }
+
   const select = {
     id: true,
     name: true,
@@ -16,17 +48,9 @@ const fetchRestaurantsByCity = (city : string | undefined) => {
     location: true,
     slug: true,
   }
-
-  if (!city) return prisma.restaurant.findMany({ select })
-
+  
   return prisma.restaurant.findMany({
-    where: {
-      location: {
-        name: {
-          equals: city.toLowerCase()
-        }
-      }
-    },
+    where,
     select,
   })
 }
@@ -39,9 +63,12 @@ const fetchCuisines = async () => {
   return prisma.cuisine.findMany()
 }
 
-export default async function Search(
-{ searchParams } : { searchParams : { city : string }}) {
-  const restaurants = await fetchRestaurantsByCity(searchParams.city)
+export default async function SearchPage({ 
+  searchParams 
+} : { 
+  searchParams : SearchParams
+}) {
+  const restaurants = await fetchRestaurantsByCity(searchParams)
 
   const locations = await fetchLocations()
 
@@ -55,6 +82,7 @@ export default async function Search(
       <SearchSideBar 
         locations={locations}
         cuisines={cuisines}
+        searchParams={searchParams}
       />
       
       {restaurants.length ? (
