@@ -1,4 +1,5 @@
 import Price from '@/app/_components/Price'
+import Stars from '@/app/_components/Stars'
 import { calculateReviewRatingAverage } from '@/utils/calculateReviewRatingAverage'
 import { Cuisine, Location, PRICE, Review } from '@prisma/client'
 import Link from 'next/link'
@@ -37,7 +38,7 @@ const RestaurantSearchCard = ({ restaurant } : { restaurant : Restaurant }) => {
 
         <div className="flex items-start">
           <div className="flex mb-2">
-            *****
+            <Stars reviews={restaurant.reviews} />
           </div>
 
           <p className="ml-2 text-sm">{renderRatingText()}</p>
