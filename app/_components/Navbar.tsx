@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import LoginModal from './LoginModal'
+import LoginModal from './AuthModal'
 
 const Navbar = () => { 
   return (
