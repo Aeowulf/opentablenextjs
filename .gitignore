@@ -44,3 +44,5 @@ env.test
 env.production
 env.staging
 .env.staging.local
+
+env_substitution.ts

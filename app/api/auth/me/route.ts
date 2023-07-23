@@ -28,6 +28,8 @@ export async function GET(request : NextRequest, response : NextResponse) {
 
   const secret = new TextEncoder().encode(process.env.JWT_SECRET)
 
+  console.log(secret)
+
   try {
     await jose.jwtVerify(token, secret)
   } catch {
